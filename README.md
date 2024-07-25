@@ -6,7 +6,7 @@ After spending a day researching headless CMSs, I could not find exactly what I 
 
 ## Workflow:
 
-1) Edit marketdown files locally
+1) Edit markdown files locally
 2) Push to git
 3) Trigger build and deploy to static file hosting service (Cloudflare pages, Github Page, S3, etc)
 4) Get content through simple API
