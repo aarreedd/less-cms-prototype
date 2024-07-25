@@ -27,7 +27,7 @@ for (const file of files) {
 	var content = fs.readFileSync(file, 'utf8')
 	// get front-matter content in json format
 	var frontMatter = fm(content)
-	var json = JSON.stringify(frontMatter);
+	var json = JSON.stringify(frontMatter, null, 2);
 	var destFile = file.replace(src, dist).replace('.md','.json')
 	// format frontMatter keys
 	var attributes = {}

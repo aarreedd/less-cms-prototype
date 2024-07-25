@@ -28,3 +28,28 @@ After spending a day researching headless CMSs, I could not find exactly what I 
 - Supports Authors
 - Supports recent posts
 - Supports Pagination
+
+## How it works
+
+The build script:
+
+1) Copies all the markdown files and assets to the distribution directory
+2) Parses all [FrontMatter](https://www.npmjs.com/package/front-matter) info in the markdown files and coverts to json and stores it in the distribution directory
+3) Creates a [manifest.json](https://less-cms-prototype.pages.dev/manifest.json) file which allows you to list and filter posts easily
+
+That's it. Now deploy it to a [static file hosting service](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/) and you have a simple JSON API to retrieve all of your content from.
+
+## Example Pages
+
+- [manifest.json](https://less-cms-prototype.pages.dev/manifest.json)
+- authors
+    - [alan.json](https://less-cms-prototype.pages.dev/authors/alan.json)
+    - [alan.md](https://less-cms-prototype.pages.dev/authors/alan.json)
+- posts
+    - [post-one.json](https://less-cms-prototype.pages.dev/posts/post-one.json)
+    - [post-one.md](https://less-cms-prototype.pages.dev/posts/post-one.md)
+    - [post-two.json](https://less-cms-prototype.pages.dev/posts/post-two.json)
+    - [post-two.md](https://less-cms-prototype.pages.dev/posts/post-two.md)
+- assets
+    - img
+        - [logo.png](https://less-cms-prototype.pages.dev/assets/img/logo.png)
