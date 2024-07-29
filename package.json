@@ -1,10 +1,10 @@
 {
-  "name": "tradinghours-cms",
+  "name": "less-cms",
   "version": "1.0.0",
-  "description": "",
+  "description": "Headless, serverless, git-based CMS with a simple, static REST API",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install && node build.js"
+    "build": "node build.js"
   },
   "dependencies": {
     "dot-object": "^2.1.5",
