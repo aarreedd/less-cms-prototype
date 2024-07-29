@@ -27,23 +27,23 @@ for (const file of files) {
 	var content = fs.readFileSync(file, 'utf8')
 	// get front-matter content in json format
 	var frontMatter = fm(content)
-	var json = JSON.stringify(frontMatter, null, 2);
-	var destFile = file.replace(src, dist).replace('.md','.json')
 	// format frontMatter keys
 	var attributes = {}
 	for (const [key, value] of Object.entries(frontMatter.attributes)) {
 		attributes[snakeCase.snakeCase(key)] = value
 	}
+	frontMatter.attributes = attributes;
+	var json = JSON.stringify(frontMatter, null, 2);
+	// write json to output destination
+	var destFile = file.replace(src, dist).replace('.md','.json')
+	fs.writeFileSync(destFile, json, 'utf8')
 	// add frontMatter content to manifest
 	key = file.split(path.sep).slice(1).join(path.sep).split('.').slice(0, -1).join('.').replace(path.sep,'.')
-	dot.str(key,attributes,manifest)
+	dot.str(key,frontMatter.attributes,manifest)
 	dot.str(key+'.source',destFile.split(path.sep).slice(1).join(path.sep),manifest)
 	dot.str(key+'.excerpt', excerptHtml(converter.makeHtml(frontMatter.body)), manifest)
 	dot.str(key+'.slug', path.parse(file).name, manifest)
 	dot.str(key+'.path', file.split(path.sep).slice(1).join(path.sep).split('.').slice(0, -1).join('.'), manifest)
-	// write json to output destination
-	fs.writeFileSync(destFile, json, 'utf8')
-
 }
 // Output manifest
 manifestJson = JSON.stringify(manifest, null, 2);
