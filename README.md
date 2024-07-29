@@ -37,7 +37,7 @@ The build script:
 2) Parses all [FrontMatter](https://www.npmjs.com/package/front-matter) info in the markdown files and coverts to json and stores it in the distribution directory
 3) Creates a [manifest.json](https://less-cms-prototype.pages.dev/manifest.json) file which allows you to list and filter posts easily
 
-That's it. Now deploy it to a [static file hosting service](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/) and you have a simple JSON API to retrieve all of your content from.
+That's it. Now deploy it to a [static file hosting service](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/) and you have a production-ready REST API to retrieve all of your content from.
 
 ## Example Pages
 
