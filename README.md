@@ -22,12 +22,12 @@ After spending a day researching headless CMSs, I could not find exactly what I 
 ## Features
 
 - SEO friendly
-- Supports images
+- Supports images ([how to get images to work properly?](#how-to-get-images-to-work-properly))
 - Supports basic search/filtering (should handle thousands of posts without issue)
-- Supports Categories
-- Supports Authors
+- Supports categories
+- Supports authors
 - Supports recent posts
-- Supports Pagination
+- Supports pagination
 
 ## How it works
 
@@ -53,3 +53,13 @@ That's it. Now deploy it to a [static file hosting service](https://developers.c
 - assets
     - img
         - [logo.png](https://less-cms-prototype.pages.dev/assets/img/logo.png)
+
+## Tips
+
+- Use GitHub as your writing environment. You can preview markdown and images will be display properly.
+- Use relative paths for linking to images and assets. For example, use `../assets/logo.png` instead of `/assets/logo.png`. This ensures that images display correctly both in GitHub’s Markdown previewer and on your website.
+- Match markdown file paths with website URLs. For example, if your CMS will be hosted at `www.example.com/blog`, store your markdown files in `/blog/*.md`.
+
+## How to get images to work properly?
+
+To ensure images display correctly on your website, set up a redirect from `www.example.com/assets/*` to `cms.example.com/assets/*`. You can rename the assets directory to avoid conflicts with your existing site.
