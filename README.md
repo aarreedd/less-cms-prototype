@@ -1,6 +1,6 @@
 # \*Less CMS Prototype
 
-This is a simple headless, serverless, static, git-based CMS.
+This is a headless, serverless, git-based CMS with a simple, static REST API.
 
 After spending a day researching headless CMSs, I could not find exactly what I want. So I build this prototype. Feedback welcome!
 
